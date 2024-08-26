@@ -21,7 +21,7 @@ const steps = [
             "Migrated old application which included enhancements of responsive design, increased SEO performance and form integration resulting in an increase of 25%.",
             "Redesign successfully increased user activity, user experience and overall performance by 75%."
         ],
-        imgSrc: "/src/assets/ico-favicon.ico"
+        imgSrc: "/ico-favicon.ico"
     },
     {
         year: 'May 2023 - Sept 2023',
