@@ -68,14 +68,21 @@ const Skills = ({ id, iconSlugs }) => {
   }, [data, theme]);
 
   return (
-    <Container id={id}>
+    <Container id={id}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '80vh',
+      }}
+    >
         <Grid container spacing={12}
             sx={{
                 display: 'flex',
                 flexDirection: 'row',
                 justifyContent: 'center',
                 alignItems: 'center',
-                mt: 5
             }}
         >
             <Grid item xs={12} md={6} sx={{ textAlign: 'center' }}>

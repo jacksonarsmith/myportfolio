@@ -1,27 +1,39 @@
-import { Container, Box, Typography, Stepper, Step, StepLabel, StepContent, Button, Paper, Divider, Avatar } from '@mui/material'
+import { Container, Box, Typography, Stepper, Step, StepLabel, StepContent, Button, Paper, Divider, Avatar, List, ListItemText, ListItem } from '@mui/material'
 import { useState } from 'react'
 import PropTypes from 'prop-types'
 
 const steps = [
     {
-        year: 'Current',
+        year: 'March 2024 - Present',
         label: 'Junior Developer @ Tomlinson Group of Companies',
-        description: "Designed and enhanced internal applications and web interfaces leading to a 40% improvement in accessibility and user interaction across platforms. (HTML, CSS, Javascript) Spearheaded an initiative to elevate code quality and documentation standards by establishing standard version control practices and conducting systematic code refactorization. This effort resulted in a 30% increase in code readability, maintainability, and facilitated future extensibility. Responsible for transforming complex queries into core data services, facilitating the generation of SSRS reports. (SQL)",
+        description: [
+            "Designed and enhanced internal applications and web interfaces leading to a 40% improvement in accessibility and user interaction across platforms. (HTML, CSS, Javascript)",
+            "Spearheaded an initiative to elevate code quality and documentation standards by establishing standard version control practices and conducting systematic code refactorization. This effort resulted in a 30% increase in code readability, maintainability, and facilitated future extensibility.",
+            "Responsible for transforming complex queries into core data services, facilitating the generation of SSRS reports. (SQL)"
+        ],
         imgSrc: "https://tomlinsongroup.com/wp-content/uploads/2018/05/cropped-favicon-32x32.png"
     },
     {
         year: 'November 2023 - February 2024',
         label: 'Software Developer @ Imperial Contracting Ottawa',
-        description: "Engineered a web application for a local contracting business specializing in comprehensive home renovations, establishing a competitive online presence. (React.js, Javascript, Node.js, Express.js) Migrated old application which included enhancements of responsive design, increased SEO performance and form integration resulting in an increase of 25%. Redesign successfully increased user activity, user experience and overall performance by 75%.",
+        description: [
+            "Engineered a web application for a local contracting business specializing in comprehensive home renovations, establishing a competitive online presence. (React.js, Javascript, Node.js, Express.js)",
+            "Migrated old application which included enhancements of responsive design, increased SEO performance and form integration resulting in an increase of 25%.",
+            "Redesign successfully increased user activity, user experience and overall performance by 75%."
+        ],
         imgSrc: "/src/assets/ico-favicon.ico"
     },
     {
         year: 'May 2023 - Sept 2023',
         label: 'IT Support Student',
-        description: 'Developed and implemented automation scripts in Python and PowerShell , streamlining IT operations and reducing manual efforts, which enhanced team productivity by 98% and facilitated efficient migration and operational processes. Utilized Microsoft Endpoint Configuration Manager to efficiently provide remote user assistance and troubleshooting. This approach significantly enhanced user satisfaction, reduced downtime, and improved overall system stability. Successfully managed and maintained Active Directory, including user account management, group policy administration, and security protocols. Leveraged IT Service Management (ITSM) tools to efficiently handle incident, problem, and change management, ensuring minimal disruption to business operations. Conducted 30+ onboarding and end-user training sessions on IT tools and best practices.',
+        description: [
+            "Developed and implemented internal automation tools streamlining operations and reducing manual efforts, which enhanced team productivity by 87.5% . (Python )",
+            "Resolved over 50+ software defects and support issues throughout my term, improving user efficiency and software stability",
+            "Spearheaded 30+ onboarding and end-user sessions on IT tools and best practices which decreased"
+        ],
         imgSrc: "https://tomlinsongroup.com/wp-content/uploads/2018/05/cropped-favicon-32x32.png"
     }
-]
+];
 
 const Experience = ({ id }) => {
 
@@ -45,9 +57,10 @@ const Experience = ({ id }) => {
                 height: '75vh',
             }}
         >
-            <Typography variant="h4">
-                Work Experience
+            <Typography variant="h3">
+                Experience
             </Typography>
+            <Divider sx={{ mt: 2, mb: 3, width: '30vw'}}/>
             <Stepper activeStep={activeStep} orientation="vertical"
                 sx={{
                     width: '100%',
@@ -72,9 +85,19 @@ const Experience = ({ id }) => {
                             }}
                         >
                             <Avatar src={step.imgSrc} alt={step.label} sx={{ width: 56, height: 56, boxShadow: 3, objectFit: 'cover'  }} />
-                            <Typography variant='subtitle1' color='GrayText' align='left'>{step.year}</Typography>
+                            <Typography variant='subtitle1' color='GrayText' align='left' sx={{ mt: 2 }}>
+                                {step.year}
+                            </Typography>
                             <Divider sx={{ mb: 2, width: '15vw'}}/>
-                            <Typography align='left'>{step.description}</Typography>
+                            <Paper elevation={3} sx={{ p: 2 }}>
+                                <List>
+                                    {step.description.map((desc, index) => (
+                                        <ListItem key={index} disableGutters>
+                                            <ListItemText primary={desc} />
+                                        </ListItem>
+                                    ))}
+                                </List>
+                            </Paper>
                             <Box>
                                 <Button
                                     disabled={activeStep === 0}

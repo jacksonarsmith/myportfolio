@@ -1,4 +1,4 @@
-import { Container, Grid, Card, CardHeader, CardMedia, CardActions, IconButton, Typography, CardContent } from '@mui/material';
+import { Container, Grid, Card, CardHeader, CardMedia, CardActions, IconButton, Typography, CardContent, Divider } from '@mui/material';
 import CodeIcon from '@mui/icons-material/Code';
 import LinkIcon from '@mui/icons-material/Link';
 import PropTypes from 'prop-types';
@@ -7,7 +7,7 @@ const projects = [
     {
         title: "Imperial Contracting Ottawa",
         description: "Developed the Imperial Contracting Ottawa [ICO] Home Renovations website using the MERN stack to showcase our Ottawa-based full home renovation expertise. The dynamic platform features a curated portfolio, captivating before-and-after gallery, and detailed service offerings, highlighting our commitment to quality craftsmanship. Leveraged modern web technologies for optimal performance and a seamless user experience. The inclusion of client testimonials and a user-friendly contact form underscores our dedication to client satisfaction.",
-        image: "/src/assets/ico-website.png",
+        image: "./src/assets/ico-website.png",
         code: "https://github.com/jacksonarsmith/imperialcontractingottawa",
         url : "https://imperialcontractingottawa.com"
     },
@@ -23,7 +23,19 @@ const projects = [
 
 const Projects = ({ id }) => {
   return (
-    <Container id={id}>
+    <Container id={id}
+        sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100vh',
+        }}
+    >
+        <Typography variant="h2">
+            Projects
+        </Typography>
+        <Divider sx={{ mt: 2, mb: 5, width: '35vw' }} />
         <Grid container spacing={12} sx={{ display: 'flex', flexWrap: 'wrap' }}>
             {projects.map((project, index) => (
                 <Grid item xs={12} md={6} key={index} sx={{ display: 'flex' }}>
@@ -49,6 +61,7 @@ const Projects = ({ id }) => {
                             alt={project.title}
                         />
                         <CardContent sx={{ flexGrow: 1 }}>
+                            <Divider sx={{ mb: 2 }}/>
                             <Typography variant="body1">
                                 {project.description}
                             </Typography>

@@ -27,7 +27,7 @@ const About = ({ id }) => {
                 <CardMedia 
                 component='img'
                 height='auto'
-                image='/src/assets/background-hero.png'
+                image='./src/assets/background-hero.png'
                 alt='Jackson Smith'
                 />
                 <CardActions disableSpacing
@@ -60,7 +60,7 @@ const About = ({ id }) => {
                     alignItems: 'flex-start',
                 }}
             >
-                <Typography variant='h4' sx={{ mb: 2 }}> 
+                <Typography variant='h3' sx={{ mb: 2 }}> 
                     About Me
                 </Typography>
                 <Divider sx={{ mb: 3, width: '100%' }} />
