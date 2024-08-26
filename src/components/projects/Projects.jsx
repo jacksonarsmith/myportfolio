@@ -7,7 +7,7 @@ const projects = [
     {
         title: "Imperial Contracting Ottawa",
         description: "Developed the Imperial Contracting Ottawa [ICO] Home Renovations website using the MERN stack to showcase our Ottawa-based full home renovation expertise. The dynamic platform features a curated portfolio, captivating before-and-after gallery, and detailed service offerings, highlighting our commitment to quality craftsmanship. Leveraged modern web technologies for optimal performance and a seamless user experience. The inclusion of client testimonials and a user-friendly contact form underscores our dedication to client satisfaction.",
-        image: "./src/assets/ico-website.png",
+        image: "/ico-website.png",
         code: "https://github.com/jacksonarsmith/imperialcontractingottawa",
         url : "https://imperialcontractingottawa.com"
     },

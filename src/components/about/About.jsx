@@ -27,7 +27,7 @@ const About = ({ id }) => {
                 <CardMedia 
                 component='img'
                 height='auto'
-                image='./src/assets/background-hero.png'
+                image='/background-hero.png'
                 alt='Jackson Smith'
                 />
                 <CardActions disableSpacing
