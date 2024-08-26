@@ -50,7 +50,7 @@ const renderCustomIcon = (icon, theme) => {
   });
 };
 
-const Skills = ({ iconSlugs }) => {
+const Skills = ({ id, iconSlugs }) => {
 
   const [data, setData] = useState(null);
   const { theme } = useTheme();
@@ -68,8 +68,8 @@ const Skills = ({ iconSlugs }) => {
   }, [data, theme]);
 
   return (
-    <Container>
-        <Grid container 
+    <Container id={id}>
+        <Grid container spacing={12}
             sx={{
                 display: 'flex',
                 flexDirection: 'row',
@@ -78,7 +78,7 @@ const Skills = ({ iconSlugs }) => {
                 mt: 5
             }}
         >
-            <Grid item xs={6} md={6} spacing={2} sx={{ textAlign: 'center' }}>
+            <Grid item xs={12} md={6} sx={{ textAlign: 'center' }}>
                 <Typography variant="h4">
                     Skills
                 </Typography>
@@ -90,7 +90,7 @@ const Skills = ({ iconSlugs }) => {
                     See Projects 
                 </Button>
             </Grid>
-            <Grid item xs={6} md={6} spacing={2} sx={{ textAlign: 'center' }}>
+            <Grid item xs={12} md={6} sx={{ textAlign: 'center' }}>
                 <Cloud {...cloudProps}>
                     <>{renderedIcons}</>
                 </Cloud>
@@ -101,7 +101,8 @@ const Skills = ({ iconSlugs }) => {
 }
 
 Skills.propTypes = {
-    iconSlugs: PropTypes.array.isRequired,
-  };
+    id: PropTypes.string.isRequired,
+    iconSlugs: PropTypes.array.isRequired
+};
 
 export default Skills

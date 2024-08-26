@@ -1,8 +1,9 @@
 import { Box } from '@mui/material'
-import Navbar from '../components/navbar/Navbar'
 import Hero from '../components/hero/Hero'
 import Experience from '../components/experience/Experience'
 import Skills from '../components/skills/Skills'
+import Projects from '../components/projects/Projects'
+import About from '../components/about/About'
 
 const iconSlugs = [
   "react",
@@ -25,10 +26,11 @@ const iconSlugs = [
 const Landing = () => {
   return (
     <Box sx={{ width: '100vw' }}>
-        <Navbar />
-        <Hero />
-        <Experience />
-        <Skills iconSlugs={iconSlugs}/>
+        <Hero id="home"/>
+        <About id="about"/>
+        <Experience id="experience"/>
+        <Skills id="skills" iconSlugs={iconSlugs}/>
+        <Projects id="projects"/>
     </Box>
   )
 }
