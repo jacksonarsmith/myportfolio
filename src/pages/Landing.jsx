@@ -25,7 +25,7 @@ const iconSlugs = [
 
 const Landing = () => {
   return (
-    <Box sx={{ width: '100vw' }}>
+    <Box sx={{ width: '100vw', height: '100vh' }}>
         <Hero id="home"/>
         <About id="about"/>
         <Experience id="experience"/>

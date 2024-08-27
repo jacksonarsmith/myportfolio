@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AppBar, Box, Toolbar, Button, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
+import { AppBar, Box, Toolbar, Button, IconButton, Drawer, ButtonGroup } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CodeIcon from '@mui/icons-material/Code';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -7,12 +7,13 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import { HashLink as Link } from 'react-router-hash-link';
 import PropTypes from 'prop-types';
 
-const navItems = ['Home', 'About', 'Experience', 'Projects', 'Skills', 'Contact'];
+const navItems = ['Home', 'About', 'Experience', 'Skills', 'Projects', 'Contact'];
 
 const Navbar = ({ toggleTheme, isDarkMode }) => {
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -28,18 +29,49 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
 
     const drawer = (
         <Box
-            sx={{ width: 250 }}
+            sx={{ 
+                width: "45vw",
+                height: '100vh',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                p: 2
+            }}
             role="presentation"
             onClick={toggleDrawer(false)}
             onKeyDown={toggleDrawer(false)}
         >
-            <List>
+            <Box
+                sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 2,
+                }}
+            >
+                <Button variant='contained' onClick={toggleDrawer(false)}>
+                    <ArrowBackIosIcon />
+                    Close
+                </Button>
+                <ButtonGroup color='inherit' orientation="vertical" variant='text' aria-label='Vertical navigation button group' 
+                    sx={{
+                        gap: 2
+                    }}
+                >
                 {navItems.map((item, index) => (
-                    <ListItem button key={index} component="a" href={`#${item.toLowerCase()}`}>
-                        <ListItemText primary={item} />
-                    </ListItem>
+                    <Button component={Link} key={index} color="inherit" to={`#${item.toLowerCase()}`}
+                        sx={{
+                            textTransform: 'none',
+                            '&:hover': {
+                                backgroundColor: 'rgba(255,255,255,0.1)',
+                                borderRadius: '5px'
+                            }
+                        }}
+                    >
+                        {item}
+                    </Button>
                 ))}
-            </List>
+                </ButtonGroup>
+            </Box>
             <Box
                 sx={{
                     display: 'flex',
@@ -68,7 +100,14 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                 }}
             >
                 {isMobile ? (
-                    <>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            width: '100%'
+                        }}
+                    >
                         <IconButton
                             color="inherit"
                             edge="end"
@@ -76,14 +115,17 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                         >
                             <MenuIcon />
                         </IconButton>
+                        <IconButton color="inherit" onClick={toggleTheme}>
+                            {isDarkMode ? <DarkModeIcon /> : <LightModeIcon />}
+                        </IconButton>
                         <Drawer
-                            anchor="right"
+                            anchor="left"
                             open={drawerOpen}
                             onClose={toggleDrawer(false)}
                         >
                             {drawer}
                         </Drawer>
-                    </>
+                    </Box>
                 ) : (
                     <Box 
                         sx={{
@@ -124,9 +166,6 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                                 alignItems: 'center'
                             }}
                         >
-                            <Button variant='contained' startIcon={<CloudDownloadIcon />}>
-                                Download CV
-                            </Button>
                             <IconButton color="inherit" onClick={toggleTheme}>
                                 {isDarkMode ? <DarkModeIcon /> : <LightModeIcon />}
                             </IconButton>

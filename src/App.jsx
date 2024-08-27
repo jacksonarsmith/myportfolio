@@ -4,6 +4,7 @@ import { CssBaseline, ThemeProvider, createTheme } from '@mui/material'
 import Landing from './pages/Landing'
 import Navbar from './components/navbar/Navbar'
 import './App.css'
+import MobileSpeedDial from './components/mobile-speed-dial/MobileSpeedDial'
 
 const lightTheme = createTheme({
   palette: {
@@ -32,6 +33,7 @@ function App() {
               <Routes>
                   <Route path="/" element={<Landing />} />
               </Routes>
+              <MobileSpeedDial />
           </Router>
       </ThemeProvider>
   );

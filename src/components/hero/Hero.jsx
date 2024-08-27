@@ -13,7 +13,7 @@ const Hero = ({ id }) => {
         justifyContent: 'center',
         alignItems: 'center',
         padding: '0 2rem',
-        height: '75vh'
+        height: '100vh'
       }}
     >
       <TypingAnimation text="I'm Jackson Smith"/>

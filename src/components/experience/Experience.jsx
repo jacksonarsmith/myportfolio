@@ -54,7 +54,7 @@ const Experience = ({ id }) => {
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
-                height: '75vh',
+                height: '100vh',
             }}
         >
             <Typography variant="h3">

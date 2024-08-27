@@ -74,7 +74,11 @@ const Skills = ({ id, iconSlugs }) => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '80vh',
+        height: '100vh',
+        mb: {
+            xs: 25,
+            sm: 0
+        }
       }}
     >
         <Grid container spacing={12}

@@ -10,7 +10,7 @@ const About = ({ id }) => {
   return (
     <Container id={id}
         sx={{
-            height: '75vh',
+            height: '100vh',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center'
