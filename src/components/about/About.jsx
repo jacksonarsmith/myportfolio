@@ -38,14 +38,14 @@ const About = ({ id }) => {
                     <Tooltip title='LinkedIn' arrow>
                         <IconButton aria-label='LinkedIn'>
                             <Link to='https://www.linkedin.com/in/jacksonarsmith'>
-                                <LinkedInIcon color='inherit' />
+                                <LinkedInIcon color='inherit' fontSize='large'/>
                             </Link>
                         </IconButton>
                     </Tooltip>
                     <Tooltip title='GitHub' arrow>
                         <IconButton aria-label='GitHub'>
                             <Link to='https://github.com/jacksonarsmith'>
-                                <GitHubIcon color='inherit' />
+                                <GitHubIcon color='inherit' fontSize='large'/>
                             </Link>
                         </IconButton>
                     </Tooltip>
@@ -70,7 +70,7 @@ const About = ({ id }) => {
                 </Typography>
                 <Button component={HashLink} to="#experience" variant='contained' color='primary' size='large' sx={{ mt: 5 }}>
                     See Experience
-                    <WorkIcon sx={{ ml: 1 }} />
+                    <WorkIcon sx={{ ml: 1 }} fontSize='small'/>
                 </Button>
             </Grid>
         </Grid>

@@ -22,7 +22,7 @@ const Hero = ({ id }) => {
       </Typography>
       <Button component={Link} to='#about' variant='contained' color='primary' size='large' sx={{ mt: 5 }}>
         Learn More
-        <ArrowDownwardOutlined sx={{ ml: 1 }}/>
+        <ArrowDownwardOutlined sx={{ ml: 1 }} fontSize='small'/>
       </Button>
     </Box>
   );

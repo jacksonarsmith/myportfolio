@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AppBar, Box, Toolbar, Button, IconButton, Drawer, ButtonGroup, Tooltip } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CodeIcon from '@mui/icons-material/Code';
@@ -26,11 +26,19 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
         setDrawerOpen(open);
     };
 
+    useEffect(() => {
+        if (drawerOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }, [drawerOpen]);
+
     const drawer = (
         <Box
             sx={{ 
                 width: "45vw",
-                height: '100vh',
+                height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
@@ -40,6 +48,10 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
             onClick={toggleDrawer(false)}
             onKeyDown={toggleDrawer(false)}
         >
+            <Button variant='contained' onClick={toggleDrawer(false)}>
+                <ArrowBackIosIcon />
+                Close
+            </Button>
             <Box
                 sx={{
                     display: 'flex',
@@ -47,17 +59,21 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                     gap: 2,
                 }}
             >
-                <Button variant='contained' onClick={toggleDrawer(false)}>
-                    <ArrowBackIosIcon />
-                    Close
-                </Button>
                 <ButtonGroup color='inherit' orientation="vertical" variant='text' aria-label='Vertical navigation button group' 
                     sx={{
-                        gap: 2
+                        gap: 5,
+                        width: '100%',
+                        textAlign: 'center'
                     }}
                 >
                 {navItems.map((item, index) => (
-                    <Button component={Link} key={index} color="inherit" to={`#${item.toLowerCase()}`}>
+                    <Button 
+                        component={Link} 
+                        key={index} 
+                        color="inherit" 
+                        to={`#${item.toLowerCase()}`}
+                        sx={{ width: '100%' }}
+                    >
                         {item}
                     </Button>
                 ))}
@@ -149,11 +165,11 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                                 alignItems: 'center'
                             }}
                         >
-                        <Tooltip title={isDarkMode ? 'Dark Mode' : 'Light Mode'} arrow>
-                            <IconButton color="inherit" onClick={toggleTheme}>
-                                {isDarkMode ? <DarkModeIcon /> : <LightModeIcon />}
-                            </IconButton>
-                        </Tooltip>
+                            <Tooltip title={isDarkMode ? 'Dark Mode' : 'Light Mode'} arrow placement="top">
+                                <IconButton color="inherit" onClick={toggleTheme}>
+                                    {isDarkMode ? <DarkModeIcon /> : <LightModeIcon />}
+                                </IconButton>
+                            </Tooltip>
                         </Box>
                     </Box>
                 )}
