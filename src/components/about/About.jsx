@@ -35,14 +35,14 @@ const About = ({ id }) => {
                         gap: 2,
                     }}
                 >
-                    <Tooltip title='LinkedIn'>
+                    <Tooltip title='LinkedIn' arrow>
                         <IconButton aria-label='LinkedIn'>
                             <Link to='https://www.linkedin.com/in/jacksonarsmith'>
                                 <LinkedInIcon color='inherit' />
                             </Link>
                         </IconButton>
                     </Tooltip>
-                    <Tooltip title='GitHub'>
+                    <Tooltip title='GitHub' arrow>
                         <IconButton aria-label='GitHub'>
                             <Link to='https://github.com/jacksonarsmith'>
                                 <GitHubIcon color='inherit' />

@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import { AppBar, Box, Toolbar, Button, IconButton, Drawer, ButtonGroup } from '@mui/material';
+import { AppBar, Box, Toolbar, Button, IconButton, Drawer, ButtonGroup, Tooltip } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CodeIcon from '@mui/icons-material/Code';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -58,15 +57,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                     }}
                 >
                 {navItems.map((item, index) => (
-                    <Button component={Link} key={index} color="inherit" to={`#${item.toLowerCase()}`}
-                        sx={{
-                            textTransform: 'none',
-                            '&:hover': {
-                                backgroundColor: 'rgba(255,255,255,0.1)',
-                                borderRadius: '5px'
-                            }
-                        }}
-                    >
+                    <Button component={Link} key={index} color="inherit" to={`#${item.toLowerCase()}`}>
                         {item}
                     </Button>
                 ))}
@@ -146,15 +137,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                             }}
                         >
                             {navItems.map((item, index) => (
-                                <Button component={Link} key={index} color="inherit" to={`#${item.toLowerCase()}`}
-                                    sx={{
-                                        textTransform: 'none',
-                                        '&:hover': {
-                                            backgroundColor: 'rgba(255,255,255,0.1)',
-                                            borderRadius: '5px'
-                                        }
-                                    }}
-                                >
+                                <Button component={Link} key={index} color="inherit" to={`#${item.toLowerCase()}`}>
                                     {item}
                                 </Button>
                             ))}
@@ -166,9 +149,11 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                                 alignItems: 'center'
                             }}
                         >
+                        <Tooltip title={isDarkMode ? 'Dark Mode' : 'Light Mode'} arrow>
                             <IconButton color="inherit" onClick={toggleTheme}>
                                 {isDarkMode ? <DarkModeIcon /> : <LightModeIcon />}
                             </IconButton>
+                        </Tooltip>
                         </Box>
                     </Box>
                 )}
