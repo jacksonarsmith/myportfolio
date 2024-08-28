@@ -1,10 +1,11 @@
-import { Box } from '@mui/material'
-import Hero from '../components/hero/Hero'
-import Experience from '../components/experience/Experience'
-import Skills from '../components/skills/Skills'
-import Projects from '../components/projects/Projects'
-import About from '../components/about/About'
-import Footer from '../components/footer/Footer'
+import { Box } from '@mui/material';
+import Hero from '../components/hero/Hero';
+import Experience from '../components/experience/Experience';
+import Skills from '../components/skills/Skills';
+import Projects from '../components/projects/Projects';
+import About from '../components/about/About';
+import Footer from '../components/footer/Footer';
+import ParticleBackground from '../utils/ParticlesBackground';
 
 const iconSlugs = [
   "react",
@@ -26,15 +27,18 @@ const iconSlugs = [
 
 const Landing = () => {
   return (
-    <Box sx={{ width: '100vw', height: '100vh' }}>
+    <Box sx={{ position: 'relative', width: '100vw', height: '100vh', overflow: 'hidden' }}>
+      <ParticleBackground />
+      <Box sx={{ position: 'relative', zIndex: 1, height: '100%', overflowY: 'auto' }}>
         <Hero id="home"/>
         <About id="about"/>
         <Experience id="experience"/>
         <Skills id="skills" iconSlugs={iconSlugs}/>
         <Projects id="projects"/>
         <Footer/>
+      </Box>
     </Box>
-  )
+  );
 }
 
-export default Landing
+export default Landing;

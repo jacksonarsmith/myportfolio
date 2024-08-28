@@ -36,7 +36,7 @@ const Footer = () => {
                     p: 4
                 }}
             >
-                <Grid item xs={12} sm={6} md={4}>
+                <Grid item xs={6} sm={6} md={4}>
                     <ButtonGroup color='inherit' variant='text' aria-label='Footer navigation button group' orientation='vertical'>
                         {navItems.slice(0,3).map((item, index) => (
                             <Button key={index} component={Link} to={`#${item.toLowerCase()}`} variant='text'
@@ -49,7 +49,7 @@ const Footer = () => {
                         ))}
                     </ButtonGroup>
                 </Grid>
-                <Grid item xs={12} sm={6} md={4}> 
+                <Grid item xs={6} sm={6} md={4}> 
                     <ButtonGroup color='inherit' variant='text' aria-label='Footer navigation button group' orientation='vertical'
                     >
                         {navItems.slice(3).map((item, index) => (
@@ -63,7 +63,7 @@ const Footer = () => {
                         ))}
                     </ButtonGroup>
                 </Grid>
-                <Grid item xs={12} sm={6} md={4}>
+                <Grid item xs={6} sm={6} md={4}>
                     <Box 
                         sx={{
                             display: 'flex',

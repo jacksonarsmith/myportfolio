@@ -8,22 +8,26 @@ const Hero = ({ id }) => {
   return (
     <Box id={id}
       sx={{
+        position: 'relative',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         padding: '0 2rem',
-        height: '100vh'
+        height: '100vh',
+        overflow: 'hidden',
       }}
     >
-      <TypingAnimation text="I'm Jackson Smith"/>
-      <Typography variant='h4' sx={{ mt: 2 }}>
-        Software Engineer
-      </Typography>
-      <Button component={Link} to='#about' variant='contained' color='primary' size='large' sx={{ mt: 5 }}>
-        Learn More
-        <ArrowDownwardOutlined sx={{ ml: 1 }} fontSize='small'/>
-      </Button>
+      <Box sx={{ position: 'relative', zIndex: 1 }}>
+        <TypingAnimation text="I'm Jackson Smith" />
+        <Typography variant='h4' sx={{ mt: 2 }}>
+          Software Engineer
+        </Typography>
+        <Button component={Link} to='#about' variant='contained' color='primary' size='large' sx={{ mt: 5 }}>
+          Learn More
+          <ArrowDownwardOutlined sx={{ ml: 1 }} fontSize='small' />
+        </Button>
+      </Box>
     </Box>
   );
 }

@@ -88,10 +88,10 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                 }}
             >
                 <IconButton color="inherit" href="https://linkedin.com/in/jacksonarsmith/" target="_blank">
-                    <LinkedInIcon />
+                    <LinkedInIcon fontSize='large'/>
                 </IconButton>
                 <IconButton color="inherit" href="https://github.com/jacksonarsmith/" target="_blank">
-                    <GitHubIcon />
+                    <GitHubIcon fontSize='large'/>
                 </IconButton>
             </Box>
         </Box>

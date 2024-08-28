@@ -1,12 +1,24 @@
-import { Container, Grid, Typography, Button, Card, CardMedia, CardActions, IconButton, Divider, Tooltip } from '@mui/material'
+import { Container, Grid, Typography, Button, Card, CardMedia, CardActions, IconButton, Divider, Tooltip, Skeleton } from '@mui/material'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import WorkIcon from '@mui/icons-material/Work'
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types'
 import { HashLink } from 'react-router-hash-link';
+import { useState, useEffect } from 'react';
 
 const About = ({ id }) => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate a loading delay
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <Container id={id}
         sx={{
@@ -18,18 +30,22 @@ const About = ({ id }) => {
     >
         <Grid container spacing={12}>
             <Grid item xs={12} md={6}>
-            <Card variant='outlined'
-                sx={{
-                borderRadius: 2,
-                boxShadow: 3,
-                }}
-            >
-                <CardMedia 
-                component='img'
-                height='auto'
-                image='/background-hero.png'
-                alt='Jackson Smith'
-                />
+              <Card variant='outlined'
+                  sx={{
+                  borderRadius: 2,
+                  boxShadow: 3,
+                  }}
+              >
+                {loading ? (
+                  <Skeleton variant="rectangular" width="100%" height={300} />
+                ) : (
+                  <CardMedia 
+                    component='img'
+                    height='auto'
+                    image='/background-hero.png'
+                    alt='Jackson Smith'
+                  />
+                )}
                 <CardActions disableSpacing
                     sx={{
                         gap: 2,
@@ -38,19 +54,19 @@ const About = ({ id }) => {
                     <Tooltip title='LinkedIn' arrow>
                         <IconButton aria-label='LinkedIn'>
                             <Link to='https://www.linkedin.com/in/jacksonarsmith'>
-                                <LinkedInIcon color='inherit' fontSize='large'/>
+                                <LinkedInIcon color='inherit' />
                             </Link>
                         </IconButton>
                     </Tooltip>
                     <Tooltip title='GitHub' arrow>
                         <IconButton aria-label='GitHub'>
                             <Link to='https://github.com/jacksonarsmith'>
-                                <GitHubIcon color='inherit' fontSize='large'/>
+                                <GitHubIcon color='inherit' />
                             </Link>
                         </IconButton>
                     </Tooltip>
                 </CardActions>
-            </Card>
+              </Card>
             </Grid>
             <Grid item xs={12} md={6}
                 sx={{

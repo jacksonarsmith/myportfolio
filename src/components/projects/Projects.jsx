@@ -1,4 +1,4 @@
-import { Container, Grid, Card, CardHeader, CardMedia, CardActions, IconButton, Typography, CardContent, Divider } from '@mui/material';
+import { Container, Grid, Card, CardHeader, CardMedia, CardActions, IconButton, Typography, CardContent, Divider, Skeleton } from '@mui/material';
 import CodeIcon from '@mui/icons-material/Code';
 import LinkIcon from '@mui/icons-material/Link';
 import PropTypes from 'prop-types';
@@ -11,11 +11,10 @@ const projects = [
         code: "https://github.com/jacksonarsmith/imperialcontractingottawa",
         url : "https://imperialcontractingottawa.ca"
     },
-
     {
         title: "Movie Ranking Platform",
         description: "Description 2",
-        image: "https://via.placeholder.com/300",
+        image: null,
         code: "https://github.com/jacksonarsmith/realtime-movie-ranking-platform",
         url : "none"
     },
@@ -54,12 +53,16 @@ const Projects = ({ id }) => {
                         }}
                     >
                         <CardHeader title={project.title} />
-                        <CardMedia 
-                            component='img'
-                            height='auto'
-                            image={project.image}
-                            alt={project.title}
-                        />
+                        {project.image ? (
+                            <CardMedia 
+                                component='img'
+                                height='auto'
+                                image={project.image}
+                                alt={project.title}
+                            />
+                        ) : (
+                            <Skeleton variant="rectangular" height={200} />
+                        )}
                         <CardContent sx={{ flexGrow: 1 }}>
                             <Divider sx={{ mb: 2 }}/>
                             <Typography variant="body1">
@@ -67,7 +70,7 @@ const Projects = ({ id }) => {
                             </Typography>
                         </CardContent>
                         <CardActions disableSpacing>
-                            <IconButton aria-label='Code' href={project.code} target="_blank">
+                            <IconButton aria-label='' href={project.code} target="_blank">
                                 <CodeIcon />
                             </IconButton>
                             {project.url !== "none" && (
