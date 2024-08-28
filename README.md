@@ -1,8 +1,73 @@
-# React + Vite
+# My Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my portfolio website! This site showcases my projects, skills, and experiences as a software engineer. If you need to reach me, you can contact me via email at [jackson16smith@gmail.com](mailto:jackson16smith@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/jacksonarsmith).
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contact](#contact)
+
+## Features
+
+- **Project Showcase**: Display a collection of my projects with descriptions, images, and links to the source code and live demos.
+- **Responsive Design**: Optimized for various screen sizes, ensuring a seamless experience on both desktop and mobile devices.
+- **Interactive UI**: Smooth animations and transitions for an engaging user experience.
+- **Skeleton Loaders**: Placeholder skeletons for images to enhance the loading experience.
+- **Contact Form**: A user-friendly contact form to get in touch with me directly from the website.
+
+## Technologies Used
+
+### Frontend
+
+- **React.js**
+- **Material-UI**
+- **@tsparticles**
+- **MagicUI**
+
+### Other Tools
+
+- **Vite**
+- **Git & GitHub**
+- **VS Code**
+- **Vercel** (for deployment)
+
+## Installation
+
+To run this project locally, follow these steps:
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/jacksonarsmith/myportfolio.git
+   cd myportfolio
+
+2. **Install dependencies**:
+    ```
+    npm install
+
+3. **Run application in dev with vite**:
+    ```
+    npm run dev
+
+## Usage
+
+To explore my work as a software engineer and get in touch with me, follow these steps:
+
+1. **Browse Projects**: Visit the "Projects" section of the website to view a collection of my projects. Each project includes a description, images, and links to the source code and live demos. Feel free to explore and examine the projects that interest you.
+
+2. **Contact Me**: If you have any questions, feedback, or business inquiries, you can contact me via [email](mailto:jackson16smith@gmail.com) or socials (e.g., [LinkedIn](https://www.linkedin.com/in/jacksonarsmith)).
+
+3. **Connect on LinkedIn**: If you prefer to connect with me on a professional platform, you can visit my LinkedIn profile by clicking [here](https://www.linkedin.com/in/jacksonarsmith). Feel free to send me a connection request or message me directly on LinkedIn.
+
+I hope you find my portfolio informative and engaging. Feel free to reach out to me if you have any further inquiries or if you would like to discuss potential collaborations or job opportunities.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+- [Email](mailto:jackson16smith@gmail.com)
