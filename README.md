@@ -4,20 +4,11 @@ Welcome to my portfolio website! This site showcases my projects, skills, and ex
 
 ## Table of Contents
 
-- [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
 - [Contact](#contact)
-
-## Features
-
-- **Project Showcase**: Display a collection of my projects with descriptions, images, and links to the source code and live demos.
-- **Responsive Design**: Optimized for various screen sizes, ensuring a seamless experience on both desktop and mobile devices.
-- **Interactive UI**: Smooth animations and transitions for an engaging user experience.
-- **Skeleton Loaders**: Placeholder skeletons for images to enhance the loading experience.
-- **Contact Form**: A user-friendly contact form to get in touch with me directly from the website.
 
 ## Technologies Used
 

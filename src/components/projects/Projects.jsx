@@ -2,6 +2,7 @@ import { Container, Grid, Card, CardHeader, CardMedia, CardActions, IconButton, 
 import CodeIcon from '@mui/icons-material/Code';
 import LinkIcon from '@mui/icons-material/Link';
 import PropTypes from 'prop-types';
+import { motion as m } from 'framer-motion';
 
 const projects = [
     {
@@ -20,6 +21,24 @@ const projects = [
     },
 ]
 
+const cardVariants = {
+    offscreen: {
+        opacity: 0,
+        filter: "blur(10px)",
+        y: 50
+    },
+    onscreen: {
+        opacity: 1,
+        filter: "blur(0px)",
+        y: 0,
+        transition: {
+            type: "spring",
+            bounce: 0.4,
+            duration: 0.8
+        }
+    }
+};
+
 const Projects = ({ id }) => {
   return (
     <Container id={id}
@@ -28,16 +47,22 @@ const Projects = ({ id }) => {
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-            height: '100vh',
+            height: '100vh'
         }}
     >
         <Typography variant="h2">
             Projects
         </Typography>
-        <Divider sx={{ mt: 2, mb: 5, width: '35vw' }} />
-        <Grid container spacing={12} sx={{ display: 'flex', flexWrap: 'wrap' }}>
+        <Divider sx={{ mt: 2, mb: 5, width: '100%' }} />
+        <Grid container spacing={12} sx={{ display: 'flex', flexWrap: 'wrap' }}
+        >
             {projects.map((project, index) => (
-                <Grid item xs={12} md={6} key={index} sx={{ display: 'flex' }}>
+                <Grid item xs={12} md={6} key={index} sx={{ display: 'flex' }} component={m.div}
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: true, amount: 0.8 }}
+                    variants={cardVariants}
+                >
                     <Card
                         sx={{
                             display: 'flex',

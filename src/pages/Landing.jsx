@@ -6,6 +6,7 @@ import Projects from '../components/projects/Projects';
 import About from '../components/about/About';
 import Footer from '../components/footer/Footer';
 import ParticleBackground from '../utils/ParticlesBackground';
+import Contact from '../components/contact/Contact';
 
 const iconSlugs = [
   "react",
@@ -35,6 +36,7 @@ const Landing = () => {
         <Experience id="experience"/>
         <Skills id="skills" iconSlugs={iconSlugs}/>
         <Projects id="projects"/>
+        <Contact id="contact"/>
         <Footer/>
       </Box>
     </Box>

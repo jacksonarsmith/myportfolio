@@ -60,7 +60,7 @@ const Experience = ({ id }) => {
             <Typography variant="h3">
                 Experience
             </Typography>
-            <Divider sx={{ mt: 2, mb: 3, width: '30vw'}}/>
+            <Divider sx={{ mt: 2, mb: 3, width: '100%'}}/>
             <Stepper activeStep={activeStep} orientation="vertical"
                 sx={{
                     width: '100%',

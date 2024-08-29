@@ -19,7 +19,7 @@ const Hero = ({ id }) => {
       }}
     >
       <Box sx={{ position: 'relative', zIndex: 1 }}>
-        <TypingAnimation text="I'm Jackson Smith" />
+        <TypingAnimation text="Jackson Smith" />
         <Typography variant='h4' sx={{ mt: 2 }}>
           Software Engineer
         </Typography>

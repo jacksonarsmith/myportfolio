@@ -8,7 +8,11 @@ const actions = [
 
 const MobileSpeedDial = () => {
   return (
-    <Box>
+    <Box
+        sx={{
+            boxShadow: 3
+        }}
+    >
         <SpeedDial
             ariaLabel="SpeedDial basic example"
             sx={{ position: 'fixed', bottom: 25, right: 25 }}
