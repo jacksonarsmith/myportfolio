@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Card, CardHeader, CardMedia, CardActions, IconButton, Typography, CardContent, Divider, Skeleton, Chip } from '@mui/material';
+import { Box, Container, Grid, Card, CardHeader, CardMedia, CardActions, IconButton, Typography, CardContent, Divider, Skeleton, Chip, Tooltip } from '@mui/material';
 import CodeIcon from '@mui/icons-material/Code';
 import LinkIcon from '@mui/icons-material/Link';
 import PropTypes from 'prop-types';
@@ -102,13 +102,17 @@ const Projects = ({ id }) => {
                             </Typography>
                         </CardContent>
                         <CardActions disableSpacing>
-                            <IconButton aria-label='' href={project.code} target="_blank">
-                                <CodeIcon />
-                            </IconButton>
-                            {project.url !== "none" && (
-                                <IconButton aria-label='Website' href={project.url} target="_blank">
-                                    <LinkIcon />
+                            <Tooltip title="View Code" arrow>
+                                <IconButton aria-label='' href={project.code} target="_blank">
+                                    <CodeIcon />
                                 </IconButton>
+                            </Tooltip>
+                            {project.url !== "none" && (
+                                <Tooltip title="Website" arrow>
+                                    <IconButton aria-label='Website' href={project.url} target="_blank">
+                                        <LinkIcon />
+                                    </IconButton>
+                                </Tooltip>
                             )}
                         </CardActions>
                     </Card>
