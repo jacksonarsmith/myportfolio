@@ -15,7 +15,7 @@ const projects = [
     {
         title: "Movie Ranking Platform",
         description: "Description 2",
-        image: null,
+        image: '/movie-ranking-platform.png',
         code: "https://github.com/jacksonarsmith/realtime-movie-ranking-platform",
         url : "none"
     },

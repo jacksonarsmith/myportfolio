@@ -33,7 +33,8 @@ const Contact = ({ id }) => {
         alignItems: 'center',
         height: '100vh',
         padding: 4,
-        width: '90vw'
+        width: '90vw',
+        mt: 8
       }}
     >
       <Typography variant="h2" gutterBottom>
