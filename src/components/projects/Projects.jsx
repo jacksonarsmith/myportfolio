@@ -1,4 +1,4 @@
-import { Container, Grid, Card, CardHeader, CardMedia, CardActions, IconButton, Typography, CardContent, Divider, Skeleton } from '@mui/material';
+import { Box, Container, Grid, Card, CardHeader, CardMedia, CardActions, IconButton, Typography, CardContent, Divider, Skeleton, Chip } from '@mui/material';
 import CodeIcon from '@mui/icons-material/Code';
 import LinkIcon from '@mui/icons-material/Link';
 import PropTypes from 'prop-types';
@@ -7,17 +7,19 @@ import { motion as m } from 'framer-motion';
 const projects = [
     {
         title: "Imperial Contracting Ottawa",
-        description: "Developed the Imperial Contracting Ottawa [ICO] Home Renovations website using the MERN stack to showcase our Ottawa-based full home renovation expertise. The dynamic platform features a curated portfolio, captivating before-and-after gallery, and detailed service offerings, highlighting our commitment to quality craftsmanship. Leveraged modern web technologies for optimal performance and a seamless user experience. The inclusion of client testimonials and a user-friendly contact form underscores our dedication to client satisfaction.",
+        description: "Developed the Imperial Contracting Ottawa local business website to showcase our their full home renovation expertise. The dynamic platform features a curated portfolio, captivating before-and-after gallery, and detailed service offerings, highlighting our commitment to quality craftsmanship. Priority for this project was to increase online visibility and user engagement through a responsive design and allowing users to easily get in touch with the business.",
         image: "/ico-website.png",
         code: "https://github.com/jacksonarsmith/imperialcontractingottawa",
-        url : "https://imperialcontractingottawa.ca"
+        url : "https://imperialcontractingottawa.ca",
+        technologies: ["React.js", "Material-UI", "Node.js", "Express.js"]
     },
     {
         title: "Movie Ranking Platform",
-        description: "Description 2",
+        description: "A movie platform that scrapes live data from IMDb to provide real-time movie rankings. Users can search for movies, view their ratings, and add them to their watchlist. The platform also features a user authentication system, allowing users to create accounts, log in, and save their watchlist. ",
         image: '/movie-ranking-platform.png',
         code: "https://github.com/jacksonarsmith/realtime-movie-ranking-platform",
-        url : "none"
+        url : "none",
+        technologies: ["React.js", "Material-UI", "Golang", "PostgreSQL"]
     },
 ]
 
@@ -88,8 +90,13 @@ const Projects = ({ id }) => {
                         ) : (
                             <Skeleton variant="rectangular" height={200} />
                         )}
-                        <CardContent sx={{ flexGrow: 1 }}>
+                        <CardContent sx={{ flexGrow: 1, textAlign: 'left' }}>
                             <Divider sx={{ mb: 2 }}/>
+                            <Box sx={{ mt: 2 }}>
+                                {project.technologies.map((tech, index) => (
+                                    <Chip key={index} label={tech} sx={{ mr: 1, mb: 1 }} />
+                                ))}
+                            </Box>
                             <Typography variant="body1">
                                 {project.description}
                             </Typography>
