@@ -25,8 +25,14 @@ const About = ({ id }) => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            mt: 4,
-            mb: 4,
+            mt: {
+              xs: 25,
+              sm: 0
+            },
+            mb: {
+                xs: 25,
+                sm: 0
+            }
         }}
     >
         <Grid container spacing={12}>
