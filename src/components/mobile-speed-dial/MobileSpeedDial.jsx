@@ -3,7 +3,7 @@ import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 
 const actions = [
-    { icon: <PictureAsPdfIcon />, name: 'Download CV', href: '/jacksonarsmith_2024.pdf' },
+    { icon: <PictureAsPdfIcon />, name: 'Download CV', href: '/jacksonarsmith_resume.pdf' },
 ];
 
 const MobileSpeedDial = () => {
