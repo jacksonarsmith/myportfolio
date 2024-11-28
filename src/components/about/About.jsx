@@ -22,10 +22,11 @@ const About = ({ id }) => {
   return (
     <Container id={id}
         sx={{
-            height: '100vh',
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
+            mt: 4,
+            mb: 4,
         }}
     >
         <Grid container spacing={12}>

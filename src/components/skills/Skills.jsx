@@ -74,7 +74,10 @@ const Skills = ({ id, iconSlugs }) => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100vh',
+        mt: {
+            xs: 25,
+            sm: 0
+        },
         mb: {
             xs: 25,
             sm: 0

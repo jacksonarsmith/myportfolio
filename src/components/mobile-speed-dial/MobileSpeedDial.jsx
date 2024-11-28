@@ -1,9 +1,9 @@
-import { Box, SpeedDial, SpeedDialAction } from "@mui/material"
+import { Box, SpeedDial, SpeedDialAction } from "@mui/material";
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 
 const actions = [
-    { icon: <PictureAsPdfIcon />, name: 'Download CV' },
+    { icon: <PictureAsPdfIcon />, name: 'Download CV', href: '/jacksonarsmith_2024.pdf' },
 ];
 
 const MobileSpeedDial = () => {
@@ -14,7 +14,7 @@ const MobileSpeedDial = () => {
         }}
     >
         <SpeedDial
-            ariaLabel="SpeedDial basic example"
+            ariaLabel="Resume speedial"
             sx={{ position: 'fixed', bottom: 25, right: 25 }}
             icon={<CloudDownloadIcon />}
         >
@@ -23,6 +23,11 @@ const MobileSpeedDial = () => {
                     key={action.name}
                     icon={action.icon}
                     tooltipTitle={action.name}
+                    href={action.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    component="a"
+                    download
                 />
             ))}
         </SpeedDial>
@@ -30,4 +35,4 @@ const MobileSpeedDial = () => {
   )
 }
 
-export default MobileSpeedDial
+export default MobileSpeedDial;

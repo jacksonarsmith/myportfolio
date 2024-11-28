@@ -34,7 +34,8 @@ const Contact = ({ id }) => {
         height: '100vh',
         padding: 4,
         width: '90vw',
-        mt: 8
+        mt: 4,
+        mb: 4,
       }}
     >
       <Typography variant="h2" gutterBottom>

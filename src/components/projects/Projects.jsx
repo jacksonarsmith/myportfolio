@@ -49,7 +49,8 @@ const Projects = ({ id }) => {
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-            height: '100vh'
+            mt: 4,
+            mb: 4,
         }}
     >
         <Typography variant="h2">
